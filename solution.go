@@ -1,4 +1,4 @@
-package solution
+package square
 
 import "math"
 
@@ -19,22 +19,18 @@ const (
 )
 
 func CalcSquare(sideLen float64, sidesNum intCustomType) float64 {
-	var square float64
+	var result float64
 	sideLenSquare := sideLen * sideLen
 	switch sidesNum {
 	case SidesCircle:
-		square = math.Pi * sideLenSquare
-		break
+		result = math.Pi * sideLenSquare
 	case SidesTriangle:
-		square = (math.Sqrt(3) * sideLenSquare) / 4
-		break
+		result = (math.Sqrt(3) * sideLenSquare) / 4
 	case SidesSquare:
-		square = sideLenSquare
-		break
+		result = sideLenSquare
 	default:
-		square = 0
-		break
+		result = 0
 	}
 
-	return square
+	return result
 }
